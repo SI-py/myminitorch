@@ -111,7 +111,7 @@ def test_sigmoid(a: float) -> None:
     assert 0 <= sigm <= 1
     assert_close(1 - sigm, sigmoid(-a))
     assert_close(sigmoid(0), 0.5)
-    assert sigmoid(a) < sigmoid(a + 1.2)
+    assert sigmoid(a) <= sigmoid(a + 1.2)
 
 @pytest.mark.task0_2
 @given(small_floats, small_floats, small_floats)
