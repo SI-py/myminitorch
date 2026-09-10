@@ -55,7 +55,7 @@ class Module:
             if isinstance(val, Parameter):
                 params[key] = val
 
-        for child_name, child_module in self.__dict__.get("_modules", {}).items():
+        for child_name, child_module in self._modules.items():
             for param_name, param_val in child_module.named_parameters():
                 params[f"{child_name}.{param_name}"] = param_val
                 
