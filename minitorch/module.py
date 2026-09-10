@@ -49,7 +49,7 @@ class Module:
         Returns:
             The name and `Parameter` of each ancestor parameter.
         """
-        params = {}
+        params = dict(self._parameters)
 
         for child_name, child_module in self._modules.items():
             for param_name, param_val in child_module.named_parameters():
