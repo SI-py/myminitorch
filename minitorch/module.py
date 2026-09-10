@@ -51,14 +51,10 @@ class Module:
         """
         params = {}
 
-        for key, val in self.__dict__.items():
-            if isinstance(val, Parameter):
-                params[key] = val
-
         for child_name, child_module in self._modules.items():
             for param_name, param_val in child_module.named_parameters():
                 params[f"{child_name}.{param_name}"] = param_val
-                
+
         return list(params.items())
 
     def parameters(self) -> Sequence[Parameter]:
