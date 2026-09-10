@@ -57,13 +57,12 @@ class Module:
 
         for child_name, child_module in self.__dict__.get("_modules", {}).items():
             for param_name, param_val in child_module.named_parameters():
-                params[param_name] = param_val
+                params[f"{child_name}.{param_name}"] = param_val
                 
         return list(params.items())
 
     def parameters(self) -> Sequence[Parameter]:
         "Enumerate over all the parameters of this module and its descendents."
-        # TODO: Implement for Task 0.4.
         return [param for _, param in self.named_parameters()]
 
     def add_parameter(self, k: str, v: Any) -> Parameter:
