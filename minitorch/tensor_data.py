@@ -104,7 +104,7 @@ def shape_broadcast(shape1: UserShape, shape2: UserShape) -> UserShape:
     """
     result = []
 
-    for i in range(1, max(len(shape1), len(shape2))):
+    for i in range(1, max(len(shape1), len(shape2)) + 1):
         dim1 = shape1[-i] if i <= len(shape1) else 1
         dim2 = shape2[-i] if i <= len(shape2) else 1
 
