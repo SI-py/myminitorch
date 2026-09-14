@@ -384,10 +384,8 @@ def tensor_reduce(
             out_position = index_to_position(out_index, out_strides)
             for reduce_index in range(a_shape[reduce_dim]):
                 a_index[reduce_dim] = reduce_index
-                out[out_position] = fn(
-                    out[index_to_position(a_index, a_strides)],
-                    a_storage[index_to_position(a_index, a_strides)],
-                )
+                a_position = index_to_position(a_index, a_strides)
+                out[out_position] = fn(out[out_position],a_storage[a_position])
 
     return _reduce
 
