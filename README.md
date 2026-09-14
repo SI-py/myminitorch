@@ -102,3 +102,28 @@ Final result:
 - Final loss: `0.1713`
 - Correct predictions: `50/50`
 - Accuracy: `100%`
+
+## Tensor Test 1 — Simple
+
+Configuration:
+
+- Dataset: Simple
+- Points: 50
+- Hidden units: 2
+- Learning rate: 0.5
+- Epochs: 500
+
+```text
+Epoch  10  loss 34.3263  correct 28
+Epoch 100  loss 31.3953  correct 28
+Epoch 200  loss 3.2234   correct 50
+Epoch 300  loss 1.2513   correct 50
+Epoch 400  loss 0.7738   correct 50
+Epoch 500  loss 0.5479   correct 50
+```
+
+Final result:
+
+- Final loss: `0.5479`
+- Correct: `50/50`
+- Accuracy: `100%`
